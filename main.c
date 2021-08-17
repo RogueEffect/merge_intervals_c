@@ -49,7 +49,7 @@ void load_intervals(char *filename) {
     int n = -1;
     intervalc = 0;
     fscanf(fp, "%d", &n);
-    intervals = (Interval*) xmalloc(n);
+    intervals = (Interval*) xmalloc(n * sizeof(Interval));
     while(intervalc < n) {
         Interval in;
         if( fscanf(fp, "%d, %d", &in.start, &in.end) != 2 ) {
